@@ -26,3 +26,5 @@ ADD  = (n) -> n SUCC
 
 MULT = (n) -> (m) -> (f) -> (x) -> (n m f) x
 MULT = (n) -> (m) -> (f) -> n m f
+
+ISZERO = (n) -> ((n FALSE) NOT) FALSE
