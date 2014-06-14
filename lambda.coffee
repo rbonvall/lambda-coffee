@@ -18,3 +18,9 @@ THREE = (f) -> (x) -> f (f (f x))
 
 SUCC = (n) -> (f) -> (x) -> f ((n f) x)
 SUCC = (n) -> (f) -> (x) -> (n f) (f x)
+
+ADD  = (n) -> (m) -> (f) -> (x) -> (((n SUCC) m) f) x
+ADD  = (n) -> n SUCC
+
+PROD = (n) -> (m) -> (f) -> (x) -> (n m f) x
+PROD = (n) -> (m) -> (f) -> n m f
