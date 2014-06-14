@@ -17,3 +17,4 @@ TWO   = (f) -> (x) -> f (f x)
 THREE = (f) -> (x) -> f (f (f x))
 
 SUCC = (n) -> (f) -> (x) -> f ((n f) x)
+SUCC = (n) -> (f) -> (x) -> (n f) (f x)
