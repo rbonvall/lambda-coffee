@@ -1,3 +1,5 @@
+I = (x) -> x
+
 toBool = (p) -> (p true) false
 
 TRUE  = (x) -> (y) -> x
