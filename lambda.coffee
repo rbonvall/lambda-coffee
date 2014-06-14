@@ -5,7 +5,9 @@ toBool = (p) -> (p true) false
 TRUE  = (x) -> (y) -> x
 FALSE = (x) -> (y) -> y
 
-NOT = (p) ->        (x) -> (y) -> (p y) x
+NOT = (p) -> (x) -> (y) -> (p y) x
+NOT = (p) -> (p FALSE) TRUE
+
 AND = (p) -> (q) -> (p q) FALSE
 OR  = (p) -> (q) -> (p TRUE) q
 
