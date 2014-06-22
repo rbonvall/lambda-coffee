@@ -8,7 +8,10 @@ FALSE = (x) -> (y) -> y
 NOT = (p) -> (x) -> (y) -> (p y) x
 NOT = (p) -> (p FALSE) TRUE
 
+AND = (p) -> (q) -> (x) -> (y) -> (((p TRUE) FALSE) ((q x) y)) y
 AND = (p) -> (q) -> (p q) FALSE
+
+OR  = (p) -> (q) -> (x) -> (y) -> (((p TRUE) FALSE) x) ((q x) y)
 OR  = (p) -> (q) -> (p TRUE) q
 
 toInt = (n) -> (n ((x) -> x + 1)) 0
