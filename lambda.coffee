@@ -31,3 +31,7 @@ MULT = (n) -> (m) -> (f) -> (x) -> (n m f) x
 MULT = (n) -> (m) -> (f) -> n m f
 
 ISZERO = (n) -> ((n FALSE) NOT) FALSE
+
+PAIR   = (a) -> (b) -> (f) -> (f a) b
+FIRST  = (p) -> p TRUE
+SECOND = (p) -> p FALSE
