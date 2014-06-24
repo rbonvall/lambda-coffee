@@ -34,6 +34,8 @@ MULT = (n) -> (m) -> (f) -> n m f
 
 ISZERO = (n) -> ((n FALSE) NOT) FALSE
 
+toPair = (p) -> left: (p TRUE), right: (p FALSE)
+
 PAIR  = (a) -> (b) -> (f) -> (f a) b
 LEFT  = (p) -> p TRUE
 RIGHT = (p) -> p FALSE
