@@ -17,6 +17,7 @@ OR  = (p) -> (q) -> (p TRUE) q
 OR  = (p) -> p TRUE
 
 toInt = (n) -> (n ((x) -> x + 1)) 0
+fromInt = (number) -> if number == 0 then ZERO else SUCC fromInt (number - 1)
 
 ZERO  = (f) -> (x) -> x
 ONE   = (f) -> (x) -> f x
