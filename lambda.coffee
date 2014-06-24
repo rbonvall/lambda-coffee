@@ -4,6 +4,7 @@ toBool = (p) -> (p true) false
 
 TRUE  = (x) -> (y) -> x
 FALSE = (x) -> (y) -> y
+FALSE = TRUE I
 
 NOT = (p) -> (x) -> (y) -> (p y) x
 NOT = (p) -> (p FALSE) TRUE
@@ -13,6 +14,7 @@ AND = (p) -> (q) -> (p q) FALSE
 
 OR  = (p) -> (q) -> (x) -> (y) -> (((p TRUE) FALSE) x) ((q x) y)
 OR  = (p) -> (q) -> (p TRUE) q
+OR  = (p) -> p TRUE
 
 toInt = (n) -> (n ((x) -> x + 1)) 0
 
