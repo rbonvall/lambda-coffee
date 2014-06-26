@@ -51,3 +51,6 @@ ISNIL = (p) -> p ((x) -> (y) -> FALSE)
 
 fromArray = (array) -> if array.length == 0 then NIL else (PAIR array[0]) fromList array.slice(1)
 toArray   = (list)  -> if toBool ISNIL list then []  else [LEFT list].concat(toArray RIGHT list)
+
+NEXTPAIR = (p) -> (PAIR RIGHT p) SUCC RIGHT p
+PRED = (n) -> LEFT ((n NEXTPAIR) ((PAIR ZERO) ZERO))
