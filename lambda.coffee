@@ -33,6 +33,9 @@ ADD  = (n) -> n SUCC
 MULT = (n) -> (m) -> (f) -> (x) -> (n m f) x
 MULT = (n) -> (m) -> (f) -> n m f
 
+CONST = (k) -> (x) -> k
+CONST = TRUE
+
 ISZERO = (n) -> ((n FALSE) NOT) FALSE
 
 toPair = (p) -> left: (p TRUE), right: (p FALSE)
