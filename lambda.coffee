@@ -27,6 +27,10 @@ THREE = (f) -> (x) -> f (f (f x))
 SUCC = (n) -> (f) -> (x) -> f ((n f) x)
 SUCC = (n) -> (f) -> (x) -> (n f) (f x)
 
+FOUR = SUCC THREE
+FIVE = SUCC FOUR
+SIX  = SUCC FIVE
+
 ADD  = (n) -> (m) -> (f) -> (x) -> (((n SUCC) m) f) x
 ADD  = (n) -> n SUCC
 
