@@ -36,6 +36,8 @@ MULT = (n) -> (m) -> (f) -> n m f
 CONST = (k) -> (x) -> k
 CONST = TRUE
 
+ISZERO = (n) -> (n (AND FALSE)) TRUE
+ISZERO = (n) -> (n (CONST FALSE)) TRUE
 ISZERO = (n) -> ((n FALSE) NOT) FALSE
 
 toPair = (p) -> left: (p TRUE), right: (p FALSE)
