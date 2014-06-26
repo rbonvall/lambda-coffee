@@ -58,3 +58,5 @@ toArray   = (list)  -> if toBool ISNIL list then []  else [LEFT list].concat(toA
 
 NEXTPAIR = (p) -> (PAIR RIGHT p) SUCC RIGHT p
 PRED = (n) -> LEFT ((n NEXTPAIR) ((PAIR ZERO) ZERO))
+
+SUBSTRACT = (n) -> n PRED
