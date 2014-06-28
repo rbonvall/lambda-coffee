@@ -21,11 +21,11 @@ fromInt = (number) -> if number == 0 then ZERO else SUCC fromInt (number - 1)
 
 ZERO  = (f) -> (x) -> x
 ONE   = (f) -> (x) -> f x
-TWO   = (f) -> (x) -> f (f x)
-THREE = (f) -> (x) -> f (f (f x))
+TWO   = (f) -> (x) -> f f x
+THREE = (f) -> (x) -> f f f x
 
-SUCC = (n) -> (f) -> (x) -> f ((n f) x)
-SUCC = (n) -> (f) -> (x) -> (n f) (f x)
+SUCC = (n) -> (f) -> (x) -> f (n f) x
+SUCC = (n) -> (f) -> (x) -> (n f) f x
 
 FOUR = SUCC THREE
 FIVE = SUCC FOUR
@@ -40,8 +40,8 @@ MULT = (n) -> (m) -> (f) -> n m f
 CONST = (k) -> (x) -> k
 CONST = TRUE
 
-ISZERO = (n) -> (n (AND FALSE)) TRUE
-ISZERO = (n) -> (n (CONST FALSE)) TRUE
+ISZERO = (n) -> (n AND FALSE) TRUE
+ISZERO = (n) -> (n CONST FALSE) TRUE
 ISZERO = (n) -> ((n FALSE) NOT) FALSE
 
 toPair = (p) -> left: (p TRUE), right: (p FALSE)
@@ -57,7 +57,7 @@ fromArray = (array) -> if array.length == 0 then NIL else (PAIR array[0]) fromAr
 toArray   = (list)  -> if toBool ISNIL list then []  else [LEFT list].concat(toArray RIGHT list)
 
 NEXTPAIR = (p) -> (PAIR RIGHT p) SUCC RIGHT p
-PRED = (n) -> LEFT ((n NEXTPAIR) ((PAIR ZERO) ZERO))
+PRED = (n) -> LEFT (n NEXTPAIR) ((PAIR ZERO) ZERO)
 
 SUBSTRACT = (n) -> n PRED
 
