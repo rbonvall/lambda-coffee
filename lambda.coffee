@@ -60,3 +60,6 @@ NEXTPAIR = (p) -> (PAIR RIGHT p) SUCC RIGHT p
 PRED = (n) -> LEFT ((n NEXTPAIR) ((PAIR ZERO) ZERO))
 
 SUBSTRACT = (n) -> n PRED
+
+YP = (f) -> (g) -> (x) -> (f g g) x
+Y = (f) ->  (YP f) (YP f)
