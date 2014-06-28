@@ -63,3 +63,5 @@ SUBSTRACT = (n) -> n PRED
 
 YP = (f) -> (g) -> (x) -> (f g g) x
 Y = (f) ->  (YP f) (YP f)
+
+FACT = Y (r) -> (n) -> (((ISZERO n) (x) -> ONE) (x) -> (MULT n) (r (PRED n))) I
