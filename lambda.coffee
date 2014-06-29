@@ -65,3 +65,5 @@ YP = (f) -> (g) -> (x) -> (f g g) x
 Y = (f) ->  (YP f) (YP f)
 
 FACT = Y (r) -> (n) -> (((ISZERO n) (x) -> ONE) (x) -> (MULT n) (r (PRED n))) I
+
+REPEAT = Y (r) -> (n) -> (c) -> (((ISZERO n) (x) -> NIL) (x) -> (PAIR c) ((r PRED n) c)) I
